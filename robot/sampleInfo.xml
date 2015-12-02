@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<SampleInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UniqueName>EasiiTutorialStep1Cpp</UniqueName>
+  <Title>Easii C++ Tutorial Step 1 - Starting iisu</Title>
+  <Updated>2011-12-09T14:59:18.5295663+01:00</Updated>
+  <Tags>C++, Easii, Tutorial, Start, Stop</Tags>
+  <ScreenShotUrl>screenshot.jpg</ScreenShotUrl>
+  <Description>The first tutorial covers the following: initializing iisu, starting and stopping the processing loop, and closing iisu.</Description>
+  <Local>false</Local>
+  <SourceFile>start_iisu.vcproj</SourceFile>
+  <BinFile>bin\1. start_iisu.exe</BinFile>
+  <Language>C++</Language>
+  <Layer/>
+  <Type>Tutorial</Type>
+  <IisuVersion>3.6.0</IisuVersion>
+</SampleInfo>

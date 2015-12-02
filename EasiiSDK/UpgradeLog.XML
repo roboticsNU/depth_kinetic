@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="EasiiSDK">
+</Property><Property Name="Solution File" Value="C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\EasiiSDK.sln">
+</Property><Property Name="Date" Value="Tuesday, November 24, 2015">
+</Property><Property Name="Time" Value="14:31:56 PM">
+</Property></Properties><Event ErrorLevel="0" Project="EasiiSDK" Source="EasiiSDK.vcproj" Description="Converting project file 'C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\EasiiSDK.vcproj'.">
+</Event><Event ErrorLevel="1" Project="EasiiSDK" Source="EasiiSDK.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="EasiiSDK" Source="EasiiSDK.vcproj" Description="MSB8012: $(TargetName) ('EasiiSDK') does not match the Librarian's OutputFile property value 'C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\Debug\EasiiSDK-d.lib' ('EasiiSDK-d') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Lib.OutputFile).">
+</Event><Event ErrorLevel="1" Project="EasiiSDK" Source="EasiiSDK.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\Debug\EasiiSDK.lib') does not match the Librarian's OutputFile property value 'C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\Debug\EasiiSDK-d.lib' ('C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\Debug\EasiiSDK-d.lib') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).">
+</Event><Event ErrorLevel="0" Project="EasiiSDK" Source="EasiiSDK.vcproj" Description="Done converting to new project file 'C:\Users\yerzhan.massalin\Documents\iisuSDK\samples\iisu\easii\EasiiSDK\EasiiSDK.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="EasiiSDK" Source="EasiiSDK.vcproj" Description="Converted">
+</Event></UpgradeLog>

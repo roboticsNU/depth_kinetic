@@ -1,0 +1,11 @@
+/EasiiSDK/Debug/*
+/EasiiSDK/Release/*
+/robot/bin/*
+/robot/Debug/*
+/robot/Release/*
+/robot/ipch/*
+/robot/start_iisu.sdf
+/robot/start_iisu.opensdf
+/robot/start_iisu.ncb
+/EasiiSDK/EasiiSDK.sdf
+/EasiiSDK/EasiiSDK.ncb
