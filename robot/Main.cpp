@@ -48,7 +48,16 @@ int main(int argc, char **argv) {
 		CvVideoWriter* vidWriterColored = 0;
 	// Now we're ready to do stuff!  But this is for a later tutorial. 
 	 
-	while (true) { 
+	clock_t t1, t2;
+
+	t1 = clock();
+
+	float thresholdTime = 10 * 60;
+	float diff = 0;
+
+	while (diff < thresholdTime) { 
+		diff = (float)clock() - (float)t1;
+		diff /= CLOCKS_PER_SEC;
 		int key = cvWaitKey(10);
 		if (key == 27) {
 			break;
