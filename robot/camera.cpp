@@ -179,7 +179,7 @@ int camera() {
 	char depthFileName[256];
 	while (!frames.empty()) {
 		cv::Mat fr = frames.front();
-		sprintf(depthFileName, "depth%05d.png", num++);
+		sprintf(depthFileName, "data/depthsense/depth%05d.png", num++);
 		cv::imwrite(depthFileName, fr);
 		frames.pop();
 	} 

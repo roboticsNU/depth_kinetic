@@ -6,7 +6,7 @@ Positioning::~Positioning(void) {
 Positioning::Positioning(void)
 {
 
-	file = fopen ("results.txt","w");
+	file = fopen ("data/MPU/results.txt","w");
 	fprintf (file, "accelX, accelY, accelZ, yaw, pitch, roll, qw, qx, qy, qz, delta\n");
 	posX = 0;
 	posY = 0;
