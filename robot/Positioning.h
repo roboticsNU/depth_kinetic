@@ -6,6 +6,7 @@ class Positioning
 {
 private:
 	FILE *file;
+	FILE *fileEuler;
 	double gx;
 	double gy;
 	double gz;

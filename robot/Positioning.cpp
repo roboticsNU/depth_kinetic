@@ -2,12 +2,14 @@
 
 Positioning::~Positioning(void) {
 	fclose(file);
+	fclose(fileEuler);
 }
 Positioning::Positioning(void)
 {
 
-	file = fopen ("data/MPU/results.txt","w");
-	fprintf (file, "accelX, accelY, accelZ, yaw, pitch, roll, qw, qx, qy, qz, delta\n");
+	file = fopen ("data/MPU/mpu.txt","w");
+	fileEuler = fopen ("data/MPU/mpu_ypr.txt","w");
+	fprintf (file, "yaw, pitch, roll\n");
 	posX = 0;
 	posY = 0;
 	posZ = 0;
@@ -59,7 +61,8 @@ void Positioning::operateData(double gyro0, double gyro1, double gyro2, double y
 																  gyro0, gyro1, gyro2, 
 																  yaw, pitch, roll, 
 																  qw, qx, qy, qz, delta);  
-	
+	fprintf (fileEuler, "%e,%e,%e\n",  
+																  yaw, pitch, roll);  
 }
 
 void Positioning::operateData(double yaw, double pitch, double roll, double qw, double qx, double qy, double qz, double delta) {
