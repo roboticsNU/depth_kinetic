@@ -18,10 +18,16 @@
 using namespace SK::Easii;  
 extern bool volatile canstart;
 extern bool volatile finished;
+extern bool volatile onlySerial;
+
 std::queue<cv::Mat> frames;
 std::queue<cv::Mat> framesConf;
 
 int camera() { 
+
+	if (onlySerial) {
+		return -2;
+	}
 
 	SK::Result result;
 	SK::Easii::Iisu &iisu = SK::Easii::Iisu::instance();

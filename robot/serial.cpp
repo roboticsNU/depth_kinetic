@@ -2,11 +2,16 @@
 #include <stdio.h>
 #include "Positioning.h"
 #include <string>
+#include <iostream>
 #include <vector>
 #include <windows.h>
 
 extern bool volatile finished;
+extern bool volatile onlySerial;
+
 bool volatile canstart = false;
+
+//#define OUTPUT_TO_STDOUT
 
 std::vector<std::string> split(const std::string &text, char sep) {
   std::vector<std::string> tokens;
@@ -21,8 +26,11 @@ std::vector<std::string> split(const std::string &text, char sep) {
 
 void serial() {
 	Positioning *positioning = new Positioning();
-	printf("SERIAL: waiting for camera start\n");
-	while (!canstart) {}
+
+	if (!onlySerial) {
+		printf("SERIAL: waiting for camera start\n");
+		while (!canstart) {}
+	}
 	printf("SERIAL: Starting serial\n");
 
 	DCB config_;        
@@ -81,6 +89,8 @@ void serial() {
 			}
 		}
 	}
+
+	int errnum = 0;
 	while(!finished) {
 		for (int i = 0; i < 256; ++i) {
 			mpuData[i] = 0;
@@ -124,7 +134,15 @@ void serial() {
 			unsigned long delta = stol(splitted.at(bla++));
 			double deltaF = (double)delta / 1000.0f; // to seconds
 			positioning->operateData(gyro0, gyro1, gyro2, yaw, pitch, roll, qw, qx, qy, qz, delta);
-			//printf("%s\n",
+			
+#ifdef OUTPUT_TO_STDOUT
+			for (int i = 0; i < splitted.size(); ++i) {
+				std::cout << splitted.at(i) << "\t";
+			} 
+			std::cout << "\n";
+#endif
+		} else {
+			errnum++;
 		}
 		counter = 0;
 	}

@@ -9,7 +9,8 @@ Positioning::Positioning(void)
 
 	file = fopen ("data/MPU/mpu.txt","w");
 	fileEuler = fopen ("data/MPU/mpu_ypr.txt","w");
-	fprintf (file, "yaw, pitch, roll\n");
+
+	fprintf (file, "accelx, accely, accelz, yaw, pitch, roll, qw, qx, qy, qz, delta\n");
 	posX = 0;
 	posY = 0;
 	posZ = 0;

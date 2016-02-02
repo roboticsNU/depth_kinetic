@@ -19,6 +19,7 @@
 using namespace SK::Easii;  
 
 bool volatile finished = false;
+bool volatile onlySerial = false;
 
 DWORD WINAPI cameraStart(CONST LPVOID lpParam) {
 	camera();
@@ -30,7 +31,7 @@ DWORD WINAPI serialStart(CONST LPVOID lpParam) {
 	ExitThread(0);
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) { 
 	HANDLE camThread;
 	HANDLE serialThread;
 	HANDLE threads[2];
@@ -46,9 +47,9 @@ int main(int argc, char **argv) {
 
 	threads[0] = camThread;
 	threads[1] = serialThread;
-	
-	int value = 0;
-	scanf("%d", &value);
+	 
+	char value = 0;
+	scanf("%c", &value);
 	finished = true;
 	
 	WaitForMultipleObjects(2, threads, TRUE, INFINITE);
