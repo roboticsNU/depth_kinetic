@@ -59,7 +59,9 @@ int camera() {
 	/*
 	CvVideoWriter* vidWriterDepth = 0;
 		CvVideoWriter* vidWriterConfidence = 0;
-		CvVideoWriter* vidWriterColored = 0;*/
+		*/
+
+	//CvVideoWriter* vidWriterColored = 0;
 	// Now we're ready to do stuff!  But this is for a later tutorial. 
 	 
 	clock_t t1, t2;
@@ -112,16 +114,17 @@ int camera() {
 			//cvZero(rawImg3);
 			//cvZero(confIm);
 
-			/*if (vidWriterColored == 0) {
-				vidWriterDepth = cvCreateVideoWriter("C:\\depth_vid.avi", -1, 30 , cvSize(rawImg1->width, rawImg1->height), 0);
-				vidWriterColored = cvCreateVideoWriter("C:\\colored_vid.avi", CV_FOURCC('M', 'J', 'P', 'G'), 30 , cvSize(rawImg3->width, rawImg3->height), 1);
-				vidWriterConfidence = cvCreateVideoWriter("confidence_vid.avi", CV_FOURCC('M', 'J', 'P', 'G'), 30 , cvSize(confIm->width, confIm->height), 0);
-			}  */
+			//if (vidWriterColored == 0) {
+				//vidWriterDepth = cvCreateVideoWriter("C:\\depth_vid.avi", -1, 30 , cvSize(rawImg1->width, rawImg1->height), 0);
+				//vidWriterColored = cvCreateVideoWriter("data\\colored_vid.avi", CV_FOURCC('M', 'J', 'P', 'G'), 30 , cvSize(rawImg3->width, rawImg3->height), 1);
+				//vidWriterConfidence = cvCreateVideoWriter("confidence_vid.avi", CV_FOURCC('M', 'J', 'P', 'G'), 30 , cvSize(confIm->width, confIm->height), 0);
+			//}  
 			 
 			int rawWidthStep = 2 * width;
 			//int coloredWidthStep = 4 * colImInfo.width;
 
-			/*for (int i = 0; i < colImInfo.height; ++i) {				
+			/*
+			for (int i = 0; i < colImInfo.height; ++i) {				
 				uchar *coloredPtr = (uchar*)(rawImg3->imageData + i * rawImg3->widthStep);
 				
 				for (int j = 0; j < colImInfo.width; ++j) {
@@ -130,7 +133,8 @@ int camera() {
 					coloredPtr[3 * j + 2] = coloredRawData[(i) * coloredWidthStep + (4 * j + 2)];
 					
 				}
-			} */
+			} 
+			*/
 
 			/*for (int i = 0; i < height; ++i) {
 				uchar *rawImgPtr1 = (uchar*)(rawImg1->imageData + i * rawImg1->widthStep);
@@ -160,10 +164,10 @@ int camera() {
 			//cvShowImage("Depth image", rawImg1);
 			//cvShowImage("Confidence image", confIm);
 			//cvShowImage("Colored", rawImg3);
-			
+			cvWaitKey();
 			//cvWriteFrame(vidWriterDepth, rawImg1);
 			//cvWriteFrame(vidWriterConfidence, confIm);
-			//cvWriteFrame(vidWriterColored, rawImg3);
+			//int stat = cvWriteFrame(vidWriterColored, rawImg3);
 
 			cv::Mat conf (confidenceIm.getImageInfos().height, confidenceIm.getImageInfos().width, CV_16U, (void*)(const uint16_t*)confidenceIm.getRAW());
 			framesConf.push(conf.clone());
@@ -199,7 +203,9 @@ int camera() {
 	} 
 
 	/*cvReleaseVideoWriter(&vidWriterDepth);
-	cvReleaseVideoWriter(&vidWriterConfidence);
-	cvReleaseVideoWriter(&vidWriterColored);*/
+	cvReleaseVideoWriter(&vidWriterConfidence);*/
+	//cvReleaseVideoWriter(&vidWriterColored);
+	
+	printf("CAMERA FINISHED\n");
 	return 0; 
 }

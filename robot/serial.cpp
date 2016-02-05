@@ -146,5 +146,6 @@ void serial() {
 		}
 		counter = 0;
 	}
+	printf("SERIAL FINISHED\n");
 	return;
 }

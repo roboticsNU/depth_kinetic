@@ -52,8 +52,11 @@ int main(int argc, char **argv) {
 	scanf("%c", &value);
 	finished = true;
 	
+	printf("MAIN FINISH START\n");
+	
 	WaitForMultipleObjects(2, threads, TRUE, INFINITE);
 	for(int i = 0; i < 2; i++) {
 		CloseHandle(threads[i]);
 	}
+	printf("MAIN FINISHED\n");
 }
