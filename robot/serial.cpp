@@ -9,7 +9,7 @@
 extern bool volatile finished;
 extern bool volatile onlySerial;
 
-bool volatile canstart = false;
+extern bool volatile canstart;
 
 //#define OUTPUT_TO_STDOUT
 

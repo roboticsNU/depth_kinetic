@@ -101,6 +101,7 @@ copy "$(ProjectDir)Resources" "$(TargetDir)Resources"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="communicate.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Positioning.cpp" />
     <ClCompile Include="serial.cpp" />
@@ -113,6 +114,7 @@ copy "$(ProjectDir)Resources" "$(TargetDir)Resources"
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
+    <ClInclude Include="communicate.h" />
     <ClInclude Include="Positioning.h" />
     <ClInclude Include="serial.h" />
   </ItemGroup>
